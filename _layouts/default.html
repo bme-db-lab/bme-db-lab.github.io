@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+{%- include head.html -%}
+  <body class="flex h-screen">
+    {%- include header.html -%}
+    <main class="flex flex-col overflow-y-scroll">
+      <div class="p-12 flex-grow" aria-label="Content">
+        {{ content }}
+      </div>
+      {%- include footer.html -%}
+    </main>
+  </body>
+</html>
