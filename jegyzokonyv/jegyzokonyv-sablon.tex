@@ -1,0 +1,169 @@
+% Adatbazisok Laboratorium LaTeX jkv sablon
+%
+% Keszitette: Szepes Nora, 2017.
+% Danyi Bence 2013-mas sablonja alapjan 
+%
+% XeLaTex kell hozzá a különböző betűtípusok miatt.
+%
+% A sablon használata:
+%  A \fillme reszek kitoltese 
+%  1.  A fedlap adatainak kitöltése
+%  2.  A feladatok rész kitöltése
+% (3.) Megjegyések a méréshez
+% 
+
+% Minden egyéb dolgot figyelmen kívül lehet hagyni.
+\documentclass[12pt]{article}
+\usepackage{fontspec}
+\setmainfont[Ligatures=TeX]{Arial}
+\usepackage{amssymb,amsmath}
+\usepackage{parskip}
+\usepackage{graphicx}
+\usepackage{moreverb}
+\usepackage{array}
+\usepackage{titlesec}
+\usepackage[left=1.77cm,top=1.27cm,right=1.27cm,nohead,nofoot]{geometry}
+\usepackage[magyar]{babel}
+\usepackage{xcolor}
+%sarga hatter a kitoltendo reszekhez
+\usepackage{soul}
+\sethlcolor{yellow} 
+\newcommand{\fillme}[1]{\emph{\hl{#1}}}
+
+
+% Értelemszerűen kitöltendő
+% A nem szükséges mezők törlendők
+\newcommand{\nev}{\fillme{Minta Andrea}}
+\newcommand{\neptun}{\fillme{ABCD123}}
+\newcommand{\feladat}{\fillme{16 -- BANK}}
+\newcommand{\meresvezeto}{\fillme{Másik Ember}}
+\newcommand{\meresideje}{\fillme{2011-03-28 8:00}}
+\newcommand{\mereshelye}{\fillme{HSZK Q}}
+\newcommand{\elerhetoseg}{\fillme{törlendő, ha nem kéri az útmutató}}
+\newcommand{\felhasznalonev}{\fillme{törlendő, ha nem kéri az útmutató}}
+\newcommand{\jelszo}{\fillme{törlendő, ha nem kéri az útmutató}}
+\newcommand{\megoldott}{\fillme{1, 2, 3a, 4}}
+% a megoldottnak jelölt feladatok max pontszámának összege pluszpontok nélkül
+\newcommand{\pont}{\fillme{2,5}}
+% Ugorj a feladatokhoz!
+% Itt ne bánts semmit...
+
+\renewcommand{\arraystretch}{1.2}
+\renewcommand{\thesection}{\arabic{section}.}
+\titleformat
+{\section}
+{\large\bfseries\itshape}
+{\thesection}
+{3.8cm}{\vspace{-0.5cm}}
+\titlespacing{\section}{-0.5cm}{0pt}{12pt}
+
+\begin{document}
+% FEJLEC ELKESZITESE
+\begin{center}
+\vspace{6pt}
+\hspace{-0.5cm}{\Huge\textbf{Mérési jegyzőkönyv -- Adatbázisok Laboratórium}}
+
+\vspace{6pt}
+\hspace{-0.5cm}{\Large\emph{\fillme{X}. mérés: \fillme{Mérés neve}}}
+
+\vspace{12pt}
+\hspace{-0.5cm}\begin{tabular}[h]{|p{10cm}|p{8cm}|}
+\hline {Név:} & \textbf{\nev} \\
+\hline {Neptun kód:} & \textbf{\neptun} \\
+\hline {Feladat kódja:} & \textbf{\feladat} \\
+\hline {Mérésvezető neve:} & \textbf{\meresvezeto} \\
+\hline {Mérés időpontja:} & \textbf{\meresideje} \\
+\hline {Mérés helyszíne:} & \textbf{\mereshelye} \\
+\hline {A működő alkalmazás elérhetősége:} & \textbf{\elerhetoseg} \\
+\hline {Felhasználónév:} & \textbf{\felhasznalonev} \\
+\hline {Jelszó:} & \textbf{\jelszo} \\
+\hline {Megoldott feladatok:} & \textbf{\megoldott} \\
+\hline {Elérhető pontszám (a megoldottnak jelölt feladatok max pontszámának összege pluszpontok nélkül):} & \textbf{\pont p} \\
+\hline
+\end{tabular}
+\end{center}
+
+% FELHASZNALOI UTMUTATO JDBC-HEZ
+\vspace{24pt}
+\hspace{-0.5cm}{\Large \textbf{Felhasználói útmutató}}
+
+\vspace{-0.5cm}
+\hspace{-0.5cm}\rule{\textwidth}{0.4pt}
+
+\fillme{Csak a JDBC mérés esetén szükséges, egyébként törlendő. Kb. fél oldal terjedelmű használati segédlet, amely a laikus felhasználók számára is érthető nyelven leírja az alkalmazás működését.}
+\newpage
+
+% FELADATOK MEGOLDASANAK LEIRASA
+\vspace{24pt}
+\hspace{-0.5cm}{\Large \textbf{Mérési feladatok megoldása}}
+
+\vspace{-0.5cm}
+\hspace{-0.5cm}\rule{1.02\textwidth}{0.4pt}
+
+
+% ITT KEZDODNEK A FELADATOK
+% ERDEMES MINDNE FELADATOT UJ OLDALRA RAKNI
+\section{Feladat}
+
+\textbf{\fillme{Magyarázat}}
+
+\fillme{Ide kerül a feladat megoldásának magyarázata, esetleges képekkel, forráskód részletekkel. Lehet menet közben kód az egyes feladatok megoldásában, erre használjuk a kód stílust! Forráskódot képként nem szúrhatsz be!}
+% Ha szóközökkel indentálsz, akkor jó a sima verbatim környezet is
+\begin{verbatimtab}
+	SELECT *
+	FROM CODE
+	WHERE
+	EGYIK = 5
+	AND MASIK = 6;
+	STB. STB.
+\end{verbatimtab}
+
+
+\textbf{\fillme{Tesztelés menete}}
+
+\fillme{A feladatot így és így teszteltem. Parancsokat szövegként kell beilleszteni, egyéb esetben screenshot és/vagy konzolból kimásolt kimenet.}
+
+\textbf{\fillme{Példaadatok}}
+
+\fillme{Ha a feladat teszteléséhez szükség van példaadatokra, azt itt tüntessük fel.}
+
+
+
+\newpage
+\section{Feladat}
+
+
+\textbf{\fillme{Magyarázat}}
+
+\fillme{Ide kerül a feladat megoldásának magyarázata, esetleges képekkel, forráskód részletekkel. Lehet menet közben kód az egyes feladatok megoldásában, erre használjuk a kód stílust! Forráskódot képként nem szúrhatsz be!}
+% Ha szóközökkel indentálsz, akkor jó a sima verbatim környezet is
+\begin{verbatimtab}
+	SELECT *
+	FROM CODE
+	WHERE
+	EGYIK = 5
+	AND MASIK = 6;
+	STB. STB.
+\end{verbatimtab}
+
+
+\textbf{\fillme{Tesztelés menete}}
+
+\fillme{A feladatot így és így teszteltem. Parancsokat szövegként kell beilleszteni, egyéb esetben screenshot és/vagy konzolból kimásolt kimenet.}
+
+\textbf{\fillme{Példaadatok}}
+
+\fillme{Ha a feladat teszteléséhez szükség van példaadatokra, azt itt tüntessük fel.}
+
+
+% VELEMENY A MERESROL
+\newpage
+\vspace{24pt}
+\hspace{-0.5cm}{\Large \textbf{Vélemény(ek) a mérésről}}
+
+\vspace{-0.5cm}
+\hspace{-0.5cm}\rule{\textwidth}{0.4pt}
+% Ide jöhetnek a megjegyzések
+
+\fillme{Vélemény, építő jellegű kritika. Ha nincs, törlendő.}
+\end{document}
