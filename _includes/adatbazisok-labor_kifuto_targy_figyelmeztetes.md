@@ -1,0 +1,1 @@
+<span style="font-size: larger; color: red;">**Figyelem! Kifutó tárgy**, 2017. őszétől</span> kezdődően az [Adatbázisok](/adatbazisok) tárgyhoz kapcsolódó laborfoglalkozások jelentősen redukált tartalommal, a tárgy [labor részeként](/adatbazisok/labor) kerülnek sorra a mintatanterv szerint haladó hallgatók részére.
